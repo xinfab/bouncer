@@ -1,45 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>XCJ sign-up page</title>
- <script type="text/javascript" language="javascript"><!--
-function validateEmail(str) {
-        // atext=[a-zA-Z0-9!#$%&*+\-\/=?^_`{\|}~]
-        var emailRegEx = /^[a-zA-Z0-9+\-_]+(\.[a-zA-Z0-9+\-_]+)*@[a-zA-Z0-9+\-_]+(\.[a-zA-Z0-9+\-_]+)*\.[a-zA-Z]{2,6}$/;
-        return emailRegEx.test(str);
-}
-function validateForm() {
-        // check email address
-        var str = document.getElementById('email').value;
-        if (!validateEmail(str)) {
-                alert('Please enter a valid email address.');
-                document.getElementById('email').focus();
-                return false;
-        }
-        // success
-        //document.mailingListForm.submit();
-        document.getElementById('submit').disabled = true;
-        setTimeout(enableSubmit, 5000);
-        return true;
-}
-function enableSubmit() {
-        document.getElementById('submit').disabled = false;
-}
-//-->
- </script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>XCJ Door</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<!-- Bootstrap -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/bouncer.css">
 </head>
-<body>
-<form action="submit.php" method="POST" onsubmit="return validateForm();">
-<p>Name:
-<input id="email" type="text" name="email"/>
-</p>
-<p>Amount paid in cash:
-<select name="amount">
-<option value="100">100 RMB = 1 month</option>
-<option value="450">450 RMB = 6 months</option>
-</select>
-</p>
-<input type="submit"/>
-</form>
+<body onload='document.getElementById("pin").focus()'>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-lg-6">
+				<h1>Xinchejian 新车间</h1>
+			</div>
+
+			<div class="col-lg-6">
+				<div id="pinbar">
+					<form method='POST' action='open.php'>
+						<div class="input-group">
+							<span class="input-group-addon">
+								PIN:
+							</span>
+							<input id="pin" type="password" class="form-control" placeholder="PIN" name="password" required />
+							<span class="input-group-btn">
+								<button class="btn btn-default" type="submit" name="action" value="Open 开门">
+								Open 开门
+								</button>
+							</span>
+						</div><!-- /input-group -->
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="well">
+					<p>Xinchejian is the first hackerspace in China. It is a non-profit organization run by volunteers. Xinchejian’s mission is to support and promote physical computing, open source hardware, and the Internet of Things.</p>
+					<p>中国第一个创客空间，也是一个非盈利创客空间，在中国各地传播创客空间的理念以及推广创客文化。大家可以与团队协作捣鼓新技术。新车间会积极举办讲座、项目、工坊、竞赛等。</p>
+					<p>
+					Non-members can visit our open night on Wednesday's 7pm.
+					<br/>
+					非会员请在每周三晚上7点开放夜来新车间参观了解。
+					</p>
+					<p>
+					Please follow us on our social media: Xinchejian Wechat: <b>xinchejian</b>.
+					<br/>
+					请关注新车间的社交媒体平台：新车间微信公众号: <b>xinchejian</b>。
+					</p>
+					<p>
+					<a href="http://xinchejian.com">XinCheJian Website 新车间网站</a>
+					<br/>
+					<a href="http://www.meetup.com/xinchejian-meetup/">XinCheJian Meetup 新车间英文活动平台</a>
+					<br/>
+					<a href="http://xinchejian.huodongxing.com">XinCheJian Events 新车间中文活动平台</a>
+					<br/>
+					<a href="mailto:info@xinchejian.com">Send us mail 给我们发邮件</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<span id="forkongithub"><a href="https://github.com/xinchejian/bouncer">Fork me on GitHub</a></span>
+
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
